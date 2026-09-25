@@ -14,7 +14,8 @@ import {
   query, 
   where, 
   serverTimestamp,
-  Timestamp 
+  Timestamp,
+  deleteField
 } from 'firebase/firestore';
 import { getAuth, signInAnonymously, onAuthStateChanged, type User } from 'firebase/auth';
 
@@ -130,5 +131,6 @@ export {
   query, 
   where, 
   serverTimestamp,
-  Timestamp 
+  Timestamp,
+  deleteField
 };

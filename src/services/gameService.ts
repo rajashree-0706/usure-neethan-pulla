@@ -13,7 +13,8 @@ import {
   runTransaction, 
   query, 
   where, 
-  serverTimestamp
+  serverTimestamp,
+  deleteField
 } from './firebase';
 import type { 
   GameSession, 
@@ -294,14 +295,13 @@ export class GameService {
         revealedPattern: initialPattern,
         wrongGuessesCount: 0,
         solved: false,
-        solveTime: undefined,
         score: 0
       };
 
       const publicUpdate = {
         status: 'playing',
         solved: false,
-        solveTime: null,
+        solveTime: deleteField(),
         currentQuestionScore: 0
       };
 
