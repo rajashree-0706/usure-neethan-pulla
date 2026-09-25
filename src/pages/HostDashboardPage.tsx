@@ -97,7 +97,8 @@ export const HostDashboardPage: React.FC = () => {
     );
   }
 
-  const joinUrl = `${window.location.origin}/join?pin=${game?.gamePin}`;
+  const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+  const joinUrl = `${window.location.origin}${baseUrl}join?pin=${game?.gamePin}`;
   const totalMembers = Object.values(teamMembersMap).reduce((acc, arr) => acc + arr.length, 0);
 
   const handleCopyPin = () => {
